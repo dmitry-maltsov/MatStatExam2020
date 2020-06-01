@@ -1,0 +1,237 @@
+\documentclass[a4]{article}
+\pagestyle{myheadings}
+
+%%%%%%%%%%%%%%%%%%%
+% Packages/Macros %
+%%%%%%%%%%%%%%%%%%%
+\usepackage{mathrsfs}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{} 
+\rfoot{\normalsize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\RomanNumeralCaps}[1]
+{\MakeUppercase{\romannumeral #1}}
+
+\usepackage{amssymb,latexsym}  % Standard packages
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{MnSymbol}
+\usepackage{amsmath,amsthm}
+\usepackage{indentfirst}
+\usepackage{graphicx}%,vmargin}
+\usepackage{graphicx}
+\graphicspath{{pictures/}} 
+\usepackage{verbatim}
+\usepackage{color}
+
+
+
+
+
+
+
+
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}% -- настройка картинок
+
+\usepackage{epigraph} %%% to make inspirational quotes.
+\usepackage[all]{xy} %for XyPic'a
+\usepackage{color} 
+\usepackage{amscd} %для коммутативных диграмм
+
+
+\newtheorem{Lemma}{Лемма}[section]
+\newtheorem{Proposition}{Предложение}[section]
+\newtheorem{Theorem}{Теорема}[section]
+\newtheorem{Corollary}{Следствие}[section]
+\newtheorem{Remark}{Замечание}[section]
+\newtheorem{Definition}{Определение}[section]
+\newtheorem{Designations}{Обозначение}[section]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% 
+%Сношение с оглавлением% 
+%%%%%%%%%%%%%%%%%%%%%%%% 
+\usepackage{tocloft} 
+\renewcommand{\cftdotsep}{2} %частота точек
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttoctitlefont}{\hspace{0.38\textwidth} \LARGE\bfseries} 
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftbeforetoctitleskip}{-1em} 
+\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-0.5em}} 
+\renewcommand{\cftsubsecfont}{\hspace{1pt}} 
+\renewcommand{\cftparskip}{3mm} %определяет величину отступа в оглавлении
+\setcounter{tocdepth}{5} 
+
+
+
+
+\addtolength{\textwidth}{0.7in}
+\textheight=630pt
+\addtolength{\evensidemargin}{-0.4in}
+\addtolength{\oddsidemargin}{-0.4in}
+\addtolength{\topmargin}{-0.4in}
+
+\newcommand{\empline}{\mbox{}\newline} 
+\newcommand{\likechapterheading}[1]{ 
+	\begin{center} 
+		\textbf{\MakeUppercase{#1}} 
+	\end{center} 
+	\empline} 
+
+\makeatletter 
+\renewcommand{\@dotsep}{2} 
+\newcommand{\l@likechapter}[2]{{\bfseries\@dottedtocline{0}{0pt}{0pt}{#1}{#2}}} 
+\makeatother 
+\newcommand{\likechapter}[1]{ 
+	\likechapterheading{#1} 
+	\addcontentsline{toc}{likechapter}{\MakeUppercase{#1}}} 
+
+
+
+
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\definecolor{linkcolor}{HTML}{000000} % цвет ссылок
+\definecolor{urlcolor}{HTML}{AA1622} % цвет гиперссылок
+
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+
+
+\def \newstr {\medskip \par \noindent} 
+
+
+\begin{document}
+\tableofcontents
+\newpage
+
+	\section{1}
+	\subsection*{Формулировка}
+	Формы представления данных и цели анализа данных.
+	\subsection*{Ответ}
+	По форме представления данных можно выделить выборк, функции, семантические данные(тексты, изображения). В качестве основных целей анализа данных можно отметить анализ глобальных событий и явлений, компактное представление данных, прогнозирование.
+	
+	\section{2}
+	\subsection*{Формулировка}
+	Характеристики положения данных.
+	\subsection*{Ответ}
+	1)Выборочное среднее, 2)med x = x ? x = x[k+1] || x = x[k], в случае нечётности и чётности соответственно(выборочная медиана), 3)$Z_R$ = полусумма экстремальных значений, 4)Полусумма выборочных квартилей $Z_Q = \frac{z_{1/4} + z_{3/4}}{2}$, 5)$Z_{tr}$ = $\frac{1}{n - 2r} \sum_{i = r+1}^{n-r} x_{(i)}$ - усечённое среднееб 6)Среднее геометрическое $Z_G$ = ${x_1 *...* x_n}^{1/n}$, 7)Среднее гармоническое $Z_M = \frac{1}{1/n * \sum_{i = 1}^{n}1/z_i}$, 8)Среднее по Колмогорову $z_k = g^{-1} (\frac{1}{n} \sum_{i = 1}^n g(x_i))$.\\
+	Вариационный ряд данных - неубывающая выборка.
+	
+	\section{3}
+	\subsection*{Формулировка}
+	Характеристики рассеивания данных.
+	\subsection*{Ответ}
+	1)Среднеквадратичное отклонение и выборочная дисперсия, 2)среднее абсолютное отклонение от медианы d = 1/n $\sum_{i =1}^{n} |x_i - med x|$, 3)R = $X_n - X_1$ - размах выборки, 4)интервальная широта, 5)Медианное абсолютное отклонение
+	
+	\section{4}
+	\subsection*{Формулировка}
+	Оптимизационный подход к построению х-к положения и рассеивания данных.
+	\subsection*{Ответ}
+	
+	
+	
+	\section{5}
+	\subsection*{Формулировка}
+	Характеристики взаимосвязи данных.
+	\subsection*{Ответ}
+	Коэффициент корреляции Пирсона(линейная зависимость), ранговый коэффициент Спирмена - мера монотонной зависимости(не линейной), квадратный (знаковый) коэффициент корреляции.
+	
+	\section{6}
+	\subsection*{Формулировка}
+	Характеристики экстремальных значений данных.
+	\subsection*{Ответ}
+	Нужно для выявления выбросов.\\
+	1)|$x_i - med x$| > K * MAD x -> IQR\\
+	2)$x_i$ - выброс, если > $max(x_1, LQ - 3/2 IQR) || < min(x_n, UQ + 3/2 IQR)$.
+	
+	
+	\section{7}
+	\subsection*{Формулировка}
+	Графическое представление данных –боксплот Тьюки.
+	\subsection*{Ответ}
+	IQR = UQ - LQ. $x_i$ - выброс, если > $max(x_1, LQ - 3/2 IQR) || < min(x_n, UQ + 3/2 IQR)$.
+	
+	\section{8}
+	\subsection*{Формулировка}
+	Характеристики распределений данных: «ядерные» оценки плотности.
+	\subsection*{Ответ}
+	Эмпирическая функция распределения, дельта функция.\\
+	Ядро - функция K(u), если : 1. K(u) $\geq$ , 2. K(-u) = K(u), 3. $\int_{-\infty}^{\infty} K(u) du = 1$.\\
+	Если функция обладает первым свойством, то результатом ядерной оценки плотности действительно будет плотность вероятности. Третье свойство гарантирует, что среднее значение распределения равно среднему использованной выборки.\\
+	Нужно для оценки плотности распределения. f(x) = $lim_{n -> \infty, h -> 0} 1/n * h \sum_{i = 1}^n K(\frac{x-x_i}{h})$
+	
+	
+	\section{9}
+	\subsection*{Формулировка}
+	Что такое точечная оценка?
+	\subsection*{Ответ}
+	Оценка параметра — соответствующая числовая характеристика, рассчитанная по выборке. Оценки параметров генеральной совокупности делятся на два класса: точечные и интервальные.\\
+	Когда оценка определяется одним числом, она называется точечной оценкой. Точечная оценка, как функция от выборки, является случайной величиной и меняется от выборки к выборке при повторном эксперименте.\\
+	К точечным оценкам предъявляют требования, которым они должны удовлетворять, чтобы хоть в каком-то смысле быть «доброкачественными». Это несмещённость, эффективность и состоятельность.\\
+	Несмещённость - если мат ожидание оценки равно оцениваемому параметру генеральной совокупности. Эффективность - если обладает минимальной дисперсией среди всех несмещенных точечных оценок. Состоятельность - если при увеличении выборки стремится по вероятности к параметру генеральной совокупности. Генеральная совокупность - параметр от которого зависит выборка.\\
+	
+	\section{10}
+	\subsection*{Формулировка}
+	Что такое статистика?
+	\subsection*{Ответ}
+	Статистика — отрасль знаний, наука, в которой излагаются общие вопросы сбора, измерения, мониторинга, анализа массовых статистических (количественных или качественных) данных и их сравнение; изучение количественной стороны массовых общественных явлений в числовой форме.
+	
+	\section{11}
+	\subsection*{Формулировка}
+	Какая оценка называется состоятельной, несмещенной, эффективной, робастной?
+	\subsection*{Ответ}
+	Несмещённость - если мат ожидание оценки равно оцениваемому параметру генеральной совокупности. Эффективность - если обладает минимальной дисперсией среди всех несмещенных точечных оценок. Состоятельность - если при увеличении выборки стремится по вероятности к параметру генеральной совокупности. Генеральная совокупность - параметр от которого зависит выборка. Робастная - устойчивая к выбросам\\
+	
+	\section{12}
+	\subsection*{Формулировка}
+	Какая из двух оценок считается более эффективной?
+	\subsection*{Ответ}
+	ДЛЯ НЕПРЕРЫВНЫХ СЛУЧАЙНЫХ ВЕЛИЧИН ВЕРОЯТНОСТЬ ТОГО, ЧТО ТОЧЕЧНАЯ ОЦЕНКА (ширина доверительного интервала равна 0) СОВПАДЕТ С ЛЮБЫМ ЗАДАННЫМ ЗНАЧЕНИЕМ ИЛИ ОЦЕНИВАЕМЫМ ПАРАМЕТРОМ РАВНА 0.\\
+	Таким образом, точечная оценка имеет смысл лишь тогда, когда приведена характеристика рассеяния этой оценки (дисперсия). В противном случае она может служить лишь в качестве исходных данных для построения интервальной оценки.\\
+	Интервальная оценка лучше.
+	
+	\section{13}
+	\subsection*{Формулировка}
+	Что такое эффективность, относительная эффективность, асимптотическая эффективность оценки?
+	\subsection*{Ответ}
+	
+	
+	\section{15}
+	\subsection*{Формулировка}
+	Приведите примеры состоятельных оценок м.о. нормального распределения.
+	\subsection*{Ответ}
+	
+	\section{16}
+	\subsection*{Формулировка}
+	Приведите примеры состоятельных оценок м.о. распределения Лапласа.
+	\subsection*{Ответ}
+	
+	\section{17}
+	\subsection*{Формулировка}
+	Приведите примеры состоятельных оценок м.о. равномерного распределения.
+	\subsection*{Ответ}
+	
+	\section{18}
+	\subsection*{Формулировка}
+	Приведите примеры состоятельных оценок центра симметрии распределения Коши.
+	\subsection*{Ответ}
+	
+	\section{19}
+	\subsection*{Формулировка}
+	
+	\subsection*{Ответ}
+\end{document}
